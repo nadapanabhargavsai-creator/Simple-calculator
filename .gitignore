@@ -1,0 +1,16 @@
+# Maven
+Backend/target/
+Backend/*.jar
+Backend/*.war
+
+# IDEs and Editors
+.idea/
+.vscode/
+*.iml
+.project
+.classpath
+.settings/
+
+# OS files
+Thumbs.db
+.DS_Store
