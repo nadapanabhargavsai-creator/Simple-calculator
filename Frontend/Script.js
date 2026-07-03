@@ -6,15 +6,16 @@ const resultEl = document.getElementById('result');
 const exprEl   = document.getElementById('expr');
  
 const API_URL = "https://simple-calculator-production-f740.up.railway.app/api/calculate";
- 
+
 /* ── Helpers ── */
+
 function isOp(ch) {
   return ['+', '-', '*', '/', '%'].includes(ch);
 }
  
 function updateDisplay() {
   resultEl.textContent = current === '' ? '0' : current;
-  const pretty = expression.replace(/\*/g, '×').replace(/\//g, '÷');
+const pretty = expression.replace(/\*/g, '×').replace(/\//g, '÷');
   exprEl.textContent = pretty;
 }
  
@@ -67,6 +68,7 @@ function deleteLast() {
 }
  
 /* ── Calculate — calls Java backend ── */
+
 async function calculate() {
   if (expression === '') return;
  
@@ -85,13 +87,13 @@ async function calculate() {
  
   try {
     resultEl.textContent = '...';
- 
-    const response = await fetch(API_URL, {
-      method:  'POST',
-      headers: { 'Content-Type': 'application/json' },
-      body:    JSON.stringify({ num1, num2, operator })
-    });
- 
+ const response = await fetch(API_URL, {
+    method: 'POST',
+    headers: {
+        'Content-Type': 'application/json'
+    },
+    body: JSON.stringify({ num1, num2, operator })
+});
     const data = await response.json();
  
     if (data.error) {
