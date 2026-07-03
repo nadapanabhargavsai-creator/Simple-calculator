@@ -5,7 +5,7 @@ let justCalc   = false;
 const resultEl = document.getElementById('result');
 const exprEl   = document.getElementById('expr');
  
-const API_URL  = 'http://localhost:8080/api/calculate';
+const API_URL = 'https://simple-calculator-production-f740.up.railway.app/api/calculate';
  
 /* ── Helpers ── */
 function isOp(ch) {
